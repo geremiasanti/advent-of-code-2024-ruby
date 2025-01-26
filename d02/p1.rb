@@ -1,4 +1,3 @@
-# frozen_string_literal
 # frozen_string_literal: true
 
 def main
