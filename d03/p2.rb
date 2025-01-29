@@ -16,16 +16,16 @@ def solve(input_file)
   enabled = true
   txt_content
     .scan(/do\(\)|don't\(\)|mul\([0-9]{1,3},[0-9]{1,3}\)/)
-    .reduce(0) { |acc, instruction| 
+    .reduce(0) { |acc, instruction|
       if instruction == 'do()' 
-        enabled = true 
+        enabled = true
         next acc
       end
       if instruction == 'don\'t()'
-        enabled = false 
+        enabled = false
         next acc
       end
-      next if !enabled
+      next acc if !enabled
 
       p1, p2 = instruction.scan(/[0-9]{1,3}/).map(&:to_i)
       acc + p1 * p2
