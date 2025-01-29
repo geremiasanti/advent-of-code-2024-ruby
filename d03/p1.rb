@@ -11,7 +11,10 @@ def main
 end
 
 def solve(input_file)
-  input_file.read.match(/mul\(/).captures
+  puts txt_content = input_file.read
+  txt_content.scan(/mul\([0-9]{1,3},[0-9]{1,3}\)/)
+    .map { |instruction| instruction.scan(/[0-9]{1,3}/).map(&:to_i) }
+    .reduce(0) { |acc, (p1, p2)| acc + p1 * p2 }
 end
 
 main
