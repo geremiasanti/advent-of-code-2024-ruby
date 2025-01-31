@@ -12,6 +12,7 @@ end
 
 def solve(input_file)
   puts input = input_file.read
+  input.split("\n")
 end
 
 main
